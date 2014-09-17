@@ -8,6 +8,8 @@ gem 'faker'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'delayed_job_active_record'
+gem 'devise'
+gem 'omniauth-twitter'
 
 group :production do
 	gem 'pg'

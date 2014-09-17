@@ -1,0 +1,62 @@
+<% if user_signed_in? %>
+<div class="navbar">
+	<a class="navbar-brand" href="/" style="font-family:montserrat"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  Job Shadow</a>
+	<ul class="nav navbar-nav" style="font-size: 12px; font-family: montserrat">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul class="nav pull-right">
+
+		<div class="btn-group" style="margin:35px 75px 0px 0px">
+			<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+				<%= current_user.username %> <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" style="width: 225px">
+				<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+				<li></li>
+				<li></li>
+				<li class="divider"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+
+
+
+
+
+
+		<% else %>
+
+
+
+		<div class="navbar">
+			<a class="navbar-brand" href="/" style="font-family:montserrat"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  Backdoor</a>
+			<ul class="nav navbar-nav"  style="font-size: 12px; font-family: montserrat">
+				<li></li>
+			</ul>
+			<div class="btn-group nav pull-right" style="margin:35px 40px 0px 0px">
+
+
+				<%= link_to "Sign up", new_user_registration_path %> |
+				<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> |
+				<%= link_to "Login", new_user_session_path %>
+
+
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+		<% end %>
+	</ul>
+</div>

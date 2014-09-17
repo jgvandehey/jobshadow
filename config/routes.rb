@@ -1,7 +1,11 @@
 Jobshadow::Application.routes.draw do
 
+  devise_for :users,
+              controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   root :to => 'pages#home' 
   get 'home' => 'pages#home'
+  match '/auth/twitter/callback', to: 'sessions#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
