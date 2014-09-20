@@ -1,16 +1,13 @@
-<% if user_signed_in? %>
+<!-- <% if user_signed_in? %>
 <div class="navbar">
-	<a class="navbar-brand" href="/" style="font-family:montserrat"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  Job Shadow</a>
-	<ul class="nav navbar-nav" style="font-size: 12px; font-family: montserrat">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+	<a class="navbar-brand" href="/" style="font-family:lato"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  <strong>Job Shadow</strong></a>
+	<ul class="nav navbar-nav" style="font-size: 12px; font-family: lato">
+		<li>test</li>
+		
 	</ul>
 	<ul class="nav pull-right">
 
-		<div class="btn-group" style="margin:35px 75px 0px 0px">
+		<div class="btn-group">
 			<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 				<%= current_user.username %> <span class="caret"></span>
 			</button>
@@ -35,8 +32,8 @@
 
 
 		<div class="navbar">
-			<a class="navbar-brand" href="/" style="font-family:montserrat"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  Backdoor</a>
-			<ul class="nav navbar-nav"  style="font-size: 12px; font-family: montserrat">
+			<a class="navbar-brand" href="/" style="font-family:lato"><img src="http://checkmybackdoor.s3.amazonaws.com/images/black_door_transparent_small.png">  Backdoor</a>
+			<ul class="nav navbar-nav"  style="font-size: 12px; font-family: lato">
 				<li></li>
 			</ul>
 			<div class="btn-group nav pull-right" style="margin:35px 40px 0px 0px">
@@ -59,4 +56,117 @@
 
 		<% end %>
 	</ul>
-</div>
+</div> -->
+
+<% if user_signed_in? %>
+
+<nav class="navbar navbar-default" role="navigation" style="font-family: lato; border-bottom: 2px solid black; padding-top: 10px; padding-bottom: 10px; border-radius: 0px">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" style="border: black 1px solid" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color: black"></span>
+        <span class="icon-bar" style="background-color: black"></span>
+        <span class="icon-bar" style="background-color: black"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-size: 30px; color: black"><strong><img src="https://s3-us-west-2.amazonaws.com/jobshadow/icon.png" style="width: 60px; margin-top: -10px"> Job Shadow</strong></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li> -->
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Browse openings">
+        </div>
+        <button type="submit" class="btn btn-default">Browse</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<% else %>
+<nav class="navbar navbar-default" role="navigation" style="font-family: lato; border-bottom: 2px solid black; padding-top: 10px; padding-bottom: 10px; border-radius: 0px">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" style="border: black 1px solid" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar" style="background-color: black"></span>
+        <span class="icon-bar" style="background-color: black"></span>
+        <span class="icon-bar" style="background-color: black"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-size: 30px; color: black"><strong>[i] Job Shadow</strong></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li> -->
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Browse openings">
+        </div>
+        <button type="submit" class="btn btn-default">Browse</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<% end %>

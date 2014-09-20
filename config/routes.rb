@@ -5,7 +5,9 @@ Jobshadow::Application.routes.draw do
 
   root :to => 'pages#home' 
   get 'home' => 'pages#home'
-  match '/auth/twitter/callback', to: 'sessions#create'
+  match '/auth/twitter/callback', to: 'sessions#create', as: 'auth/twitter'
+   match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
