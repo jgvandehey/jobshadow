@@ -1,0 +1,66 @@
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+#form-box {
+  padding: 10px;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  background-color: rgba(244, 244, 244, 1.0);
+}
+
+.form {
+  margin: 0px auto 10px auto;
+  background: #e5e5e5;
+  border: none;
+  border-radius: 3px;
+  color: #5a5656;
+  font-family: inherit;
+  font-size: 14px;
+  height: 50px;
+  outline: none;
+  padding: 0px 10px;
+  width: 280px;
+  -webkit-appearance:none;
+}
+.form:hover {
+   background: #e5e5e5;
+  color: #5a5656;
+  font-size: 14px;
+}
+
+.form:focus {
+    background: #e5e5e5;
+  color: #5a5656;
+}
+
+/*.btn-round {
+  background: #5a5656;
+  border-radius: 50%;
+  color: #f4f4f4;
+  display: block;
+  font-size: 12px;
+  height: 50px;
+  line-height: 50px;
+  margin: 30px 125px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50px;
+}*/
+/*.sign-up-header {*/
+    /*padding-top: 50px;  If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    /*padding-bottom: 50px;*/
+    /*text-align: center;*/
+    /*color: #f8f8f8;*/
+    /*background: url(intro-bg.jpg) no-repeat center center;*/
+    /*background: blue;*/
+    /*background-size: cover;*/
+/*}*/

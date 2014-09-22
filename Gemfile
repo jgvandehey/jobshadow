@@ -10,6 +10,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'delayed_job_active_record'
 gem 'devise'
 gem 'omniauth-twitter'
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 group :production do
 	gem 'pg'
