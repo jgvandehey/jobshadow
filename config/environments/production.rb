@@ -65,10 +65,11 @@ Jobshadow::Application.configure do
 
     config.paperclip_defaults = {
     :storage => :s3,
+    :s3_protocol => 'http',
     :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :bucket => "jobshadow",
+      :access_key_id => "AKIAIZAW3RBYQGI2TGCA",
+      :secret_access_key => "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"
     }
   }
 

@@ -5,20 +5,20 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :company, :linkedin_url, :location, :industry, :avatar
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :company, :linkedin_url, :location, :industry, :avatar_file_name, :avatar
   validates_uniqueness_of :username
   has_attached_file :avatar,
-  :styles => { :medium => "300x300#", :thumb => "100x100#" }, :default_url => "http://checkmybackdoor.s3.amazonaws.com/images/noprofile.png"
+  :styles => { :medium => "300x300#", :thumb => "100x100#" }, 
+  :default_url => "http://checkmybackdoor.s3.amazonaws.com/images/noprofile.png"
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_create do |user|
   		user.provider = auth.provider
   		user.uid = auth.uid
-  		user.avatar = auth['info']['image'].sub("_normal", "")
+  		user.avatar = auth['info']['image']
   		user.username = auth["info"]["nickname"]
     # user.username = auth.info.nickname
-end
+  end
 end
 def password_required?
 	super && provider.blank?
