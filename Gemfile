@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
+gem 'awesome_print', require: 'ap'
 
 group :production do
 	gem 'pg'
