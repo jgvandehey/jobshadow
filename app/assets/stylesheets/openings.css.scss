@@ -1,0 +1,19 @@
+// Place all the styles related to the Openings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.open-table {
+	width: 70%;
+	font-size: 18px;
+	font-family: "lato";
+	text-align: middle;
+	margin: 0 auto;
+}
+.open-table tr {
+	border-radius: 50%;
+}
+
+.open-table img {
+	border-radius: 50%;
+	width: 50px;
+}

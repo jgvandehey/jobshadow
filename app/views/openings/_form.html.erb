@@ -1,0 +1,10 @@
+<%= simple_form_for(@opening) do |f| %>
+<!-- <%= f.text_field :title, placeholder: "Title", class: "form" %> -->
+<%= f.text_field :position, placeholder: "Your job title", class: "form" %>
+<%= f.text_field :company, placeholder: "Company", class: "form" %>
+<%= f.text_field :description, placeholder: "Description", class: "form" %>
+<%= f.text_field :location, placeholder: "City, State", class: "form" %>
+<%= f.input :availability, placeholder: "Availability", collection: ["Chat on the phone", "Grab coffee", "Shadow on the job"], class: "select-picker" %>
+<%= f.button :submit, 'continue', class: "action-button btn btn-warning", :style => "font-size: 30px" %>
+
+<% end %>

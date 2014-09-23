@@ -5,7 +5,8 @@ class UsersController < ApplicationController
  # before_filter :authenticate_user!, except: [:index, :show, :browse]
 
   def show   
-    @user = !params[:id].nil? ? User.find(params[:id]) : current_user    
+    @user = !params[:id].nil? ? User.find(params[:id]) : current_user  
+    @openings = @user.openings.order("created_at DESC")  
   end
 
   # def browse

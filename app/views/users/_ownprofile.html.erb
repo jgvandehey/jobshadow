@@ -1,0 +1,27 @@
+<%= image_tag @user.avatar.url(:medium) %>
+on my own profile
+<br>
+<table>
+	<thead>
+		<tr>
+		<th>Availability</th>
+			<th>Job Title</th>
+			<th>Company</th>
+			<th>Location</th>
+		</tr>
+	</thead>
+	<% @openings.each do |opening| %>
+	<tbody>
+	<tr>
+		<td><%= opening.availability %>
+		</td>	
+		<td><%= opening.position %>
+		</td>	
+		<td><%= opening.company %>
+		</td>	
+		<td><%= opening.location %>
+		</td>	
+	</tr>
+	<% end %>
+	</tbody>
+	</table>

@@ -1,0 +1,43 @@
+<div class="row">
+<div class="col-lg-12">
+<div class="open-table">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<% @openings.each do |opening| %>
+	<tbody>
+		<tr>
+		<td>
+		<%= image_tag User.find(opening.user_id).avatar(:medium) %>
+		</td>
+			<td><%= opening.availability %> with the
+			</td>	
+			<td><%= opening.position %> @ 
+			</td>	
+			<td><%= opening.company %> in 
+			</td>	
+			<td><%= opening.location %>
+			</td>
+			<td><span class="glyphicon glyphicon-envelope"></span>
+			</td>
+			<!-- <td><% if current_user == opening.user %>
+				<%= link_to 'Show', opening %>
+				<%= link_to 'Edit', edit_opening_path(opening) %>
+				<%= link_to 'Destroy', opening, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</td>-->	
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+</div>
+</div>

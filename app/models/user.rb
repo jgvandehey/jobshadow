@@ -5,11 +5,13 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :company, :linkedin_url, :location, :industry, :avatar_file_name, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :company, :linkedin_url, :location, :industry, :avatar_file_name, :avatar, :college, :experience
   validates_uniqueness_of :username
   has_attached_file :avatar,
   :styles => { :medium => "300x300#", :thumb => "100x100#" }, 
   :default_url => "http://checkmybackdoor.s3.amazonaws.com/images/noprofile.png"
+  has_many :openings, :dependent => :destroy
+  has_many :requests, :dependent => :destroy
 
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_create do |user|

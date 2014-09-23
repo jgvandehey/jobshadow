@@ -1,5 +1,9 @@
 Jobshadow::Application.routes.draw do
 
+  resources :openings
+
+  resources :requests
+
   devise_for :users,
   controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
@@ -9,7 +13,8 @@ Jobshadow::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
   resources :users
-  get "users/show"
+  # get "users/show"
+  match 'users/:id' => 'users#show', as: :user
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

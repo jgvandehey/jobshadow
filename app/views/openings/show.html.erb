@@ -1,0 +1,29 @@
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @opening.availability %> with the
+			</td>	
+			<td><%= @opening.title %> @ 
+			</td>	
+			<td><%= @opening.company %> in 
+			</td>	
+			<td><%= @opening.location %>
+			</td>
+			<td><% if current_user == @opening.user %>
+				<%= link_to 'Show', @opening %>
+				<%= link_to 'Edit', edit_opening_path(@opening) %>
+				<%= link_to 'Destroy', @opening, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</td>	
+		</tr>
+	</tbody>
+</table>

@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140922191137) do
+ActiveRecord::Schema.define(:version => 20140922231036) do
+
+  create_table "openings", :force => true do |t|
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "company"
+    t.string   "position"
+    t.string   "location"
+    t.text     "description"
+    t.string   "availability"
+    t.boolean  "open",         :default => true
+  end
+
+  create_table "requests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -37,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20140922191137) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "experience"
+    t.string   "college"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
